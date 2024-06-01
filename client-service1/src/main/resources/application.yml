@@ -1,0 +1,28 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: clientservice1
+  profiles:
+    active: dev
+  cloud:
+    config:
+
+      discovery:
+        enabled: true
+        service-id: CONFIG-SERVER
+      username: "user"
+      password: "682f81fa-46c6-4fba-af15-15211b8a8b16"
+
+  config:
+    import: "optional:configserver:"
+
+
+
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
